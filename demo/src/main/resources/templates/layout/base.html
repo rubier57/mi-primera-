@@ -1,0 +1,44 @@
+<!doctype html>
+<html
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  lang="es"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Ajusta la página al ancho de la pantalla (celular, tablet o PC) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title layout:title-pattern="$CONTENT_TITLE | Registro 11°">
+      Registro 11°
+    </title>
+    <!-- Bootstrap 5: todos los estilos vienen de este archivo en internet (CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  </head>
+  <!-- ... continúa debajo de </head> -->
+  <!-- d-flex flex-column: acomoda el contenido y pie uno debajo del otro
+     min-vh-100: la página mide como mínimo el alto de la pantalla
+     bg-light: fondo gris muy claro -->
+  <body class="d-flex flex-column min-vh-100 bg-light">
+    <!-- navbar: barra de menú | navbar-expand: los enlaces van en fila
+       bg-dark: fondo oscuro | data-bs-theme="dark": letras claras -->
+      <nav  th:replace="~{fragments/menu :: menu}"> </nav>
+    <!-- ... continúa debajo de </nav> -->
+    <!-- container: centrado | py-4: espacio (padding) arriba y abajo -->
+    <main class="container py-4">
+      <!-- ~: lugar en cada página hija donde aquí su contenido -->
+      <div layout:fragment="contenido">
+        <p>Contenido por defecto.</p>
+      </div>
+    </main>
+
+    <!-- mt-auto: empuja el pie hasta abajo | py-3: espacio arriba y abajo
+     bg-secondary: texto centrado | text-secondary: color gris | border-top: línea arriba -->
+    <footer class="mt-auto py-3 text-center border-top">
+      Undécimo año · Spring Boot con Thymeleaf y Bootstrap 5
+    </footer>
+
+    <!-- JavaScript de Bootstrap: lo necesitan los menús desplegables, alertas, etc. -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
